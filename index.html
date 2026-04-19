@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Data Strategy & Open Evidence Presentation</title>
+    <style>
+        /* CSS Variables for a sleek, modern color palette */
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #2c3e50;
+            --accent-color: #1a5276;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2vh 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .presentation-card {
+            background: var(--card-bg);
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: var(--accent-color);
+            font-weight: 400;
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .thematic-frame {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .animal-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            flex: 1;
+            max-width: 110px;
+        }
+
+        .animal-column img, .bottom-row img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .animal-column img:hover, .bottom-row img:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+        }
+
+        .slide-container {
+            flex: 4;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Essential for responsive iframes (maintains 16:9 ratio) */
+        .iframe-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            background-color: #000;
+        }
+
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .bottom-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .bottom-row img {
+            width: 100px;
+        }
+
+        /* Mobile Responsiveness Rules */
+        @media (max-width: 900px) {
+            .presentation-card {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .thematic-frame {
+                flex-direction: column;
+            }
+
+            .animal-column {
+                flex-direction: row;
+                max-width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+                order: 2; /* Puts animals below the presentation on mobile */
+            }
+
+            .slide-container {
+                order: 1; /* Keeps presentation at the top on mobile */
+            }
+
+            .animal-column img, .bottom-row img {
+                width: 70px; /* Smaller icons for mobile */
+            }
+
+            .bottom-row {
+                flex-wrap: wrap;
+                margin-top: 15px;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-card">
+        <header>
+            <h1>Federal Data Strategy & Open Evidence</h1>
+        </header>
+
+        <div class="thematic-frame">
+            <div class="animal-column">
+                <img src="assets/images/scientific-octopus.png" alt="Scientific Octopus" title="Scientific Method">
+                <img src="assets/images/statistical-beaver.png" alt="Statistical Beaver" title="Statistical Analysis">
+                <img src="assets/images/evaluation-badger.png" alt="Evaluation Badger" title="Program Evaluation">
+            </div>
+
+            <div class="slide-container">
+                <div class="iframe-wrapper">
+                    <iframe 
+                        src="https://docs.google.com/presentation/d/e/2PACX-YOUR-LINK-HERE/embed?start=false&loop=false&delayms=3000" 
+                        frameborder="0" 
+                        allowfullscreen="true" 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="animal-column">
+                <img src="assets/images/accountability-meercat.png" alt="Accountability Meercat" title="Accountability">
+                <img src="assets/images/administrative-ant.png" alt="Administrative Ant" title="Administration">
+                <img src="assets/images/geospatial-pigeon.png" alt="Geospatial Pigeon" title="Geospatial Data">
+            </div>
+        </div>
+
+        <div class="bottom-row">
+            <img src="assets/images/navigation-salmon.png" alt="Navigation Salmon" title="Navigation">
+            <img src="assets/images/mascot-platypus.png" alt="Mascot Platypus" title="Mascot">
+            <img src="assets/images/reference-tortoise.png" alt="Reference Tortoise" title="Reference">
+        </div>
+    </div>
+
+</body>
+</html>
