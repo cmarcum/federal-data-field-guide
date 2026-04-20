@@ -129,11 +129,19 @@
         }
 
         .bottom-landscape img {
-            max-width: 100%;
+            display: block;
+			margin: 0 auto;
+			max-width: 100%;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
+		
+		a[href$=".pdf"]::after {
+		  content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='13' height='14' viewBox='0 0 24 24'><path fill='currentColor' d='M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V8h4.5L13 3.5zM8 12h8v2H8v-2zm0 4h5v2H8v-2z'/></svg>");
+		  margin-left: 4px;
+		  vertical-align: text-bottom;
+		}
 
         @media (max-width: 900px) {
             .presentation-card {
@@ -186,7 +194,7 @@
 
         <div class="top-animal-row">
             <img src="assets/images/navigation-salmon.png" alt="Navigation Salmon" title="Navigation Data">
-            <img src="assets/images/mascot-platypus.png" alt="Mascot Platypus" title="Mascot of the Field Guide. Datasets don’t always fit neatly into a single category, which is why the semiaquatic, egg-laying mammal called the duck-billed platypus is this Field Guide’s mascot. ">
+            <img src="assets/images/mascot-platypus.png" alt="Mascot Platypus" title="Mascot of the Field Guide. Datasets don’t always fit neatly into a single category, &#10; which is why the semiaquatic, egg-laying mammal called the duck-billed platypus &#10; is this Field Guide’s mascot. ">
             <img src="assets/images/reference-tortoise.png" alt="Reference Tortoise" title="Reference Data">
         </div>
 
@@ -203,6 +211,8 @@
 					frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 					</iframe>
                 </div>
+				<br>
+				<center><a href="assets/documents/federal-data-field-guide-v1.pdf">Printable Version (PDF)</a></center>
             </div>
 
             <div class="side-column">
@@ -216,10 +226,10 @@
 		<br><br>
 		This Field Guide was prepared by Denice W. Ross and Christopher Steven Marcum with support from the UC Berkeley Executive Fellowship in Applied Technology Policy. Recommended citation:
 		<blockquote>
-			Ross, Denice W. and Marcum, Christopher Steven. 2026. "Federal Data Field Guide." Version 1. University of California, Berkeley. DOI: https://doi.org/10.15779/J2P043 
+			Ross, Denice W. and Marcum, Christopher Steven. 2026. "Federal Data Field Guide." Version 1. University of California, Berkeley. DOI: <a href="https://doi.org/10.15779/J2P043">https://doi.org/10.15779/J2P043</a> 
 		</blockquote>
 		<br>
-            <img src="assets/images/landscape-cacti.png" width="100%" alt="Thematic Landscape" title="Landscape">
+            <center><img src="assets/images/landscape-cacti.png" width="55%" alt="Cacti Landscape" title="Landscape"></center>
 			<blockquote>
 			<center>
 			This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
