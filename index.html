@@ -189,25 +189,27 @@
 
     <div class="presentation-card">
         <header>
-            <h1>The Federal Data Field Guide</h1>
+            <a href="#" onclick="goToSlide('id.g3a9e928a51a_0_0')"><h1>The Federal Data Field Guide</h1></a>
         </header>
 
         <div class="top-animal-row">
-            <img src="assets/images/navigation-salmon.png" alt="Navigation Salmon" title="Navigation Data">
-            <img src="assets/images/mascot-platypus.png" alt="Mascot Platypus" title="Mascot of the Field Guide. Datasets don’t always fit neatly into a single category, &#10; which is why the semiaquatic, egg-laying mammal called the duck-billed platypus &#10; is this Field Guide’s mascot. ">
-            <img src="assets/images/reference-tortoise.png" alt="Reference Tortoise" title="Reference Data">
+            <img src="assets/images/navigation-salmon.png" alt="Navigation Salmon" title="Navigation Data" onclick="goToSlide('id.g3acee35c548_1_133')">
+            <img src="assets/images/mascot-platypus.png" alt="Mascot Platypus" title="Mascot of the Field Guide. Datasets don’t always fit neatly into a single category, &#10; which is why the semiaquatic, egg-laying mammal called the duck-billed platypus &#10; is this Field Guide’s mascot." onclick="goToSlide('id.g39c8182b864_0_764')">
+            <img src="assets/images/reference-tortoise.png" alt="Reference Tortoise" title="Reference Data" onclick="goToSlide('id.g3ad70c377d9_0_2')">
         </div>
 
         <div class="main-content">
             <div class="side-column">
-                <img src="assets/images/scientific-octopus.png" alt="Scientific Octopus" title="Scientific Data">
-                <img src="assets/images/statistical-beaver.png" alt="Statistical Beaver" title="Statistical Data">
-                <img src="assets/images/evaluation-badger.png" alt="Evaluation Badger" title="Evaluation Data">
+                <img src="assets/images/scientific-octopus.png" alt="Scientific Octopus" title="Scientific Data" onclick="goToSlide('id.g3abad3425ea_0_138')">
+                <img src="assets/images/statistical-beaver.png" alt="Statistical Beaver" title="Statistical Data" onclick="goToSlide('id.g39c5326991f_0_168')">
+                <img src="assets/images/evaluation-badger.png" alt="Evaluation Badger" title="Evaluation Data" onclick="goToSlide('id.g3acee35c548_1_54')">
             </div>
            
             <div class="slide-container">
                 <div class="iframe-wrapper">
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTaWGk0R440yFZbYxpAWe19pjVsASA0lD9Wlp1yL2LoSdZrMqRm1MHPiysZhR2B-Bjiftxvqa8hs_ih/pubembed?start=false&loop=false&delayms=60000" 
+                    <iframe 
+					id="presentation-iframe"
+					src="https://docs.google.com/presentation/d/e/2PACX-1vTaWGk0R440yFZbYxpAWe19pjVsASA0lD9Wlp1yL2LoSdZrMqRm1MHPiysZhR2B-Bjiftxvqa8hs_ih/pubembed?start=false&loop=false&delayms=60000" 
 					frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 					</iframe>
                 </div>
@@ -216,9 +218,9 @@
             </div>
 
             <div class="side-column">
-                <img src="assets/images/accountability-meercat.png" alt="Accountability Meercat" title="Accountability Data">
-                <img src="assets/images/administrative-ant.png" alt="Administrative Ant" title="Administrative Data">
-                <img src="assets/images/geospatial-pigeon.png" alt="Geospatial Pigeon" title="Geospatial Data">
+                <img src="assets/images/accountability-meercat.png" alt="Accountability Meercat" title="Accountability Data" onclick="goToSlide('id.g3ae29b7b94f_0_6')">
+                <img src="assets/images/administrative-ant.png" alt="Administrative Ant" title="Administrative Data" onclick="goToSlide('id.g3abad3425ea_0_88')">
+                <img src="assets/images/geospatial-pigeon.png" alt="Geospatial Pigeon" title="Geospatial Data" onclick="goToSlide('id.g39c5326991f_0_180')">
             </div>
         </div
 		
@@ -238,6 +240,16 @@
 			
         </div>
     </div>
+	
+	<script>
+        const baseUrl = "https://docs.google.com/presentation/d/e/2PACX-1vTaWGk0R440yFZbYxpAWe19pjVsASA0lD9Wlp1yL2LoSdZrMqRm1MHPiysZhR2B-Bjiftxvqa8hs_ih/pubembed?start=false&loop=false&delayms=60000";
 
+        function goToSlide(slideId) {
+            const iframe = document.getElementById('presentation-iframe');
+            // Appends the specific slide ID to the end of your presentation URL
+            iframe.src = baseUrl + "&slide=" + slideId;
+        }
+    </script>
+	
 </body>
 </html>
