@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federal Data Strategy & Open Evidence Presentation</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>The Federal Data Field Guide</title>
     <style>
-        /* CSS Variables for a sleek, modern color palette */
         :root {
-            --bg-color: #f4f7f6;
-            --text-color: #2c3e50;
-            --accent-color: #1a5276;
-            --card-bg: #ffffff;
+            --bg-beige: #f2ece4;
+            --text-navy: #002868;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-beige);
+            color: var(--text-navy);
             margin: 0;
-            padding: 2vh 2vw;
+            padding: 3vh 2vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,29 +26,46 @@
         }
 
         .presentation-card {
-            background: var(--card-bg);
+            background: var(--bg-beige);
             max-width: 1200px;
             width: 100%;
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(0, 40, 104, 0.08);
             box-sizing: border-box;
+            border: 3px solid var(--text-navy);
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
         header h1 {
-            color: var(--accent-color);
-            font-weight: 400;
+            color: var(--text-navy);
+            font-weight: 800;
             margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: -0.5px;
+            font-size: 2.8rem;
+            letter-spacing: -1px;
         }
 
-        .thematic-frame {
+        .top-animal-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 1px;
+            padding-bottom: 1px;
+        }
+
+        .top-animal-row img {
+            width: 90px;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .main-content {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -56,7 +73,7 @@
             gap: 30px;
         }
 
-        .animal-column {
+        .side-column {
             display: flex;
             flex-direction: column;
             gap: 25px;
@@ -64,17 +81,18 @@
             max-width: 110px;
         }
 
-        .animal-column img, .bottom-row img {
+        .side-column img, .top-animal-row img {
             width: 100%;
+            max-width: 110px;
             height: auto;
             border-radius: 8px;
             transition: transform 0.3s ease, filter 0.3s ease;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        .animal-column img:hover, .bottom-row img:hover {
+        .side-column img:hover, .top-animal-row img:hover {
             transform: translateY(-5px);
-            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+            filter: drop-shadow(0 6px 12px rgba(0, 40, 104, 0.3));
         }
 
         .slide-container {
@@ -83,15 +101,15 @@
             max-width: 800px;
         }
 
-        /* Essential for responsive iframes (maintains 16:9 ratio) */
         .iframe-wrapper {
             position: relative;
-            padding-bottom: 56.25%; 
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            background-color: #000;
+            background-color: var(--text-navy);
+            border: 2px solid var(--text-navy);
         }
 
         .iframe-wrapper iframe {
@@ -103,53 +121,58 @@
             border: 0;
         }
 
-        .bottom-row {
+        .bottom-landscape {
             display: flex;
             justify-content: center;
-            gap: 40px;
             margin-top: 40px;
+            padding-top: 30px;
         }
 
-        .bottom-row img {
-            width: 100px;
+        .bottom-landscape img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
 
-        /* Mobile Responsiveness Rules */
         @media (max-width: 900px) {
             .presentation-card {
                 padding: 20px;
             }
 
             header h1 {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
+                font-size: 2rem;
             }
 
-            .thematic-frame {
+            .top-animal-row {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .top-animal-row img {
+                width: 70px;
+            }
+
+            .main-content {
                 flex-direction: column;
             }
 
-            .animal-column {
+            .side-column {
                 flex-direction: row;
                 max-width: 100%;
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 15px;
-                order: 2; /* Puts animals below the presentation on mobile */
+                order: 2;
+            }
+
+            .side-column img {
+                width: 70px; 
             }
 
             .slide-container {
-                order: 1; /* Keeps presentation at the top on mobile */
-            }
-
-            .animal-column img, .bottom-row img {
-                width: 70px; /* Smaller icons for mobile */
-            }
-
-            .bottom-row {
-                flex-wrap: wrap;
-                margin-top: 15px;
-                gap: 15px;
+                order: 1;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -158,39 +181,51 @@
 
     <div class="presentation-card">
         <header>
-            <h1>Federal Data Strategy & Open Evidence</h1>
+            <h1>The Federal Data Field Guide</h1>
         </header>
 
-        <div class="thematic-frame">
-            <div class="animal-column">
-                <img src="assets/images/scientific-octopus.png" alt="Scientific Octopus" title="Scientific Method">
-                <img src="assets/images/statistical-beaver.png" alt="Statistical Beaver" title="Statistical Analysis">
-                <img src="assets/images/evaluation-badger.png" alt="Evaluation Badger" title="Program Evaluation">
-            </div>
+        <div class="top-animal-row">
+            <img src="assets/images/navigation-salmon.png" alt="Navigation Salmon" title="Navigation Data">
+            <img src="assets/images/mascot-platypus.png" alt="Mascot Platypus" title="Mascot of the Field Guide. Datasets don’t always fit neatly into a single category, which is why the semiaquatic, egg-laying mammal called the duck-billed platypus is this Field Guide’s mascot. ">
+            <img src="assets/images/reference-tortoise.png" alt="Reference Tortoise" title="Reference Data">
+        </div>
 
+        <div class="main-content">
+            <div class="side-column">
+                <img src="assets/images/scientific-octopus.png" alt="Scientific Octopus" title="Scientific Data">
+                <img src="assets/images/statistical-beaver.png" alt="Statistical Beaver" title="Statistical Data">
+                <img src="assets/images/evaluation-badger.png" alt="Evaluation Badger" title="Evaluation Data">
+            </div>
+           
             <div class="slide-container">
                 <div class="iframe-wrapper">
-                    <iframe 
-                        src="https://docs.google.com/presentation/d/e/2PACX-YOUR-LINK-HERE/embed?start=false&loop=false&delayms=3000" 
-                        frameborder="0" 
-                        allowfullscreen="true" 
-                        mozallowfullscreen="true" 
-                        webkitallowfullscreen="true">
-                    </iframe>
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTaWGk0R440yFZbYxpAWe19pjVsASA0lD9Wlp1yL2LoSdZrMqRm1MHPiysZhR2B-Bjiftxvqa8hs_ih/pubembed?start=false&loop=false&delayms=60000" 
+					frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+					</iframe>
                 </div>
             </div>
 
-            <div class="animal-column">
-                <img src="assets/images/accountability-meercat.png" alt="Accountability Meercat" title="Accountability">
-                <img src="assets/images/administrative-ant.png" alt="Administrative Ant" title="Administration">
+            <div class="side-column">
+                <img src="assets/images/accountability-meercat.png" alt="Accountability Meercat" title="Accountability Data">
+                <img src="assets/images/administrative-ant.png" alt="Administrative Ant" title="Administrative Data">
                 <img src="assets/images/geospatial-pigeon.png" alt="Geospatial Pigeon" title="Geospatial Data">
             </div>
-        </div>
-
-        <div class="bottom-row">
-            <img src="assets/images/navigation-salmon.png" alt="Navigation Salmon" title="Navigation">
-            <img src="assets/images/mascot-platypus.png" alt="Mascot Platypus" title="Mascot">
-            <img src="assets/images/reference-tortoise.png" alt="Reference Tortoise" title="Reference">
+        </div
+		
+        <div class="bottom-landscape">
+		<br><br>
+		This Field Guide was prepared by Denice W. Ross and Christopher Steven Marcum with support from the UC Berkeley Executive Fellowship in Applied Technology Policy. Recommended citation:
+		<blockquote>
+			Ross, Denice W. and Marcum, Christopher Steven. 2026. "Federal Data Field Guide." Version 1. University of California, Berkeley. DOI: https://doi.org/10.15779/J2P043 
+		</blockquote>
+		<br>
+            <img src="assets/images/landscape-cacti.png" width="100%" alt="Thematic Landscape" title="Landscape">
+			<blockquote>
+			<center>
+			This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+			</center>
+			</blockquote>
+			
         </div>
     </div>
 
