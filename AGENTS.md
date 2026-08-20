@@ -6,16 +6,20 @@ This repository contains the authoritative source code, raw data, and structural
 
 ## I. Core Mission & Scope Constraints
 
-1. **Scope & Exclusions**: This guide focuses exclusively on publicly available datasets created, maintained, and published by executive branch agencies of the U.S. federal government. It **excludes** sensitive or classified datasets, as well as derivative works such as reports or interactive web tools that use data.
-2. **Verifiable Information Only**: Never invent, extrapolate, or hallucinate non-existent federal agencies, datasets, or classification codes. All dataset identities, agency affiliations, and metadata mappings must be strictly verifiable against the guide or repository contents.
-3. **Platypus Principle (Multi-Category Classification)**: Datasets do not always fit neatly into a single category (hence the duck-billed platypus mascot). When a dataset exhibits multi-category traits, assign a **Primary Category** and list relevant **Secondary Categories**.
-4. **Direct & Objective Tone**: Communicate plainly and directly. Avoid hyperbole, marketing fluff, or conversational setup sentences. Begin responses immediately with structured tables or direct facts.
+1. **Scope & Exclusions**: This guide focuses on publicly available datasets created, maintained, and published by executive branch agencies of the U.S. federal government. It **excludes** sensitive or classified datasets, as well as derivative works such as reports or interactive web tools that use data.
+2. **Verifiable Information Only**: Never invent, extrapolate, or hallucinate non-existent federal agencies, datasets, or classification codes.
+   * For datasets explicitly included in the Field Guide, verify details against the guide's metadata.
+   * For datasets **not** listed in the Field Guide, verify their validity against official federal sources, such as **Data.gov** or primary federal agency websites (`.gov` / `.mil`). 
+   * *Note*: Data.gov is the official catalog but is not exhaustive; omission from Data.gov does not invalidate a dataset if it is published on an official agency website.
+3. **Ontology Flexibility & Extension**: Agents can and should use the Field Guide's 8-part category ontology to classify **any** valid federal dataset, whether it is cataloged in the Field Guide or discovered via external federal sources.
+4. **Platypus Principle (Multi-Category Classification)**: Datasets do not always fit neatly into a single category (hence the duck-billed platypus mascot). When a dataset exhibits multi-category traits, assign a **Primary Category** and list relevant **Secondary Categories**.
+5. **Direct & Objective Tone**: Communicate plainly and directly. Avoid hyperbole, marketing fluff, or conversational setup sentences. Begin responses immediately with structured tables or direct facts.
 
 ---
 
 ## II. Primary Data Categories & Functional Ontology
 
-All federal datasets must be categorized using the **eight primary categories** defined in the Federal Data Field Guide. Agents must not use external domain groupings (e.g., "Health", "Economy", "Environment"), as the guide's taxonomy is organized by **collection methods, policy frameworks, and functional use cases**.
+All federal datasets—whether listed in the Field Guide or externally discovered—must be categorized using the **eight primary categories** defined in the Federal Data Field Guide. Agents must not use external domain groupings (e.g., "Health", "Economy", "Environment"), as the guide's taxonomy is organized by **collection methods, policy frameworks, and functional use cases**.
 
 | Category Identifier | Category Name | Primary Definition & Scope | Primary Collection Modes | Key Governing Laws & Policies |
 | :--- | :--- | :--- | :--- | :--- |
@@ -56,20 +60,23 @@ When describing the legal context, privacy constraints, or access restrictions o
 
 **Sequential Logic**:
 * **Step 1: Categorization Strategy**
-  * Identify the primary function of the dataset based on the Field Guide's 8 categories.
-  * If a dataset exhibits multi-category traits (Platypus principle), designate a **Primary Category** and **Secondary Category**.
-* **Step 2: Verification**
+  * Evaluate the functional scope and collection method of the dataset (whether listed in the Field Guide or externally queried).
+  * Assign a **Primary Category** using the Field Guide's 8-part ontology in Section II.
+  * If the dataset exhibits multi-category traits (Platypus principle), assign a **Secondary Category**. Use this rule sparingly and only if a primary category does not cover 60% of use-cases.
+* **Step 2: Verification & Federal Source Validation**
   * Verify the official dataset title, managing department/agency, collection mode, and legal governing authorities.
-  * If a dataset is not cataloged or is a derivative report/interactive tool, state clearly that it falls outside the guide's primary dataset scope.
+  * For datasets in the Field Guide: Confirm details against Section V.
+  * For datasets **not** in the Field Guide: Confirm validity via **Data.gov** or official federal agency websites (`.gov` / `.mil`). Acknowledge that Data.gov is non-exhaustive, so lack of listing on Data.gov does not invalidate an asset if hosted on an official `.gov`/`.mil` domain.
+  * If a dataset cannot be verified via the Guide, Data.gov, or an official agency domain, state clearly that it is unverified.
 * **Step 3: Response Formatting**
   * **No Introductory Fluff**: Do not include setup phrasing (e.g., "Here is the dataset information:"). Start directly with the structured response.
   * **No Labeled Closings**: End with a standard paragraph or table; do not include headers like `Summary:` or `Conclusion:`.
 
 ---
 
-## V. Verified Dataset Inventory (Index from Guide)
+## V. Exemplar Dataset Index (Cataloged in Field Guide)
 
-When identifying datasets or answering inquiries, verify the query against this canonical list of datasets explicitly cited in the Federal Data Field Guide:
+This index lists canonical dataset examples cited in the Field Guide. Agents are fully empowered to classify datasets not present on this list by applying the ontology in Section II and verifying them through official federal sources.
 
 ### Statistical Data (`CAT-STAT`)
 * **American Community Survey (ACS)** (U.S. Census Bureau / Department of Commerce)
@@ -185,119 +192,13 @@ When identifying datasets or answering inquiries, verify the query against this 
 | :--- | :--- |
 | **Collection Mode** | [Surveys / Administrative Forms / Sensors / Mixed Methods / etc.] |
 | **Governing Policy/Laws** | [CIPSEA / Privacy Act / OGDA / GDA / Evidence Act / etc.] |
-| **Access & Portals** | [Open Access / Restricted Access / API / Data.gov / GeoPlatform] |
-| **Data Use Case** | [Summary of practical/policy use case from guide] |
+| **Verification Source** | [Field Guide Index / Data.gov / Official Agency Domain (.gov/.mil)] |
+| **Access & Portals** | [Open Access / Restricted Access / API / Data.gov / GeoPlatform / Agency Portal] |
+| **Data Use Case** | [Summary of practical/policy use case] |
 
 ### 2. Multi-Dataset Comparison / Query Format
 
-| Dataset Name | Agency | Primary Category | Collection Mode | Legal & Policy Framework |
-| :--- | :--- | :--- | :--- | :--- |
-| [Dataset 1] | [Agency 1] | `[CAT-ID]` | [Mode 1] | [Policy/Law 1] |
-| [Dataset 2] | [Agency 2] | `[CAT-ID]` | [Mode 2] | [Policy/Law 2] |* **Characteristics of SNAP Households** (Food and Nutrition Service / USDA)
-* **RePORTER (Research Portfolio Online Reporting Tools)** (National Institutes of Health)
-* **H-1B Employer Data Hub** (U.S. Citizenship and Immigration Services / DHS)
-* **Home Mortgage Disclosure Act (HMDA) Data** (Consumer Financial Protection Bureau)
-* **Housing Assistance Program Data - Owners** (Federal Emergency Management Agency / DHS)
-* **Geographic Distribution of VA Expenditure (GDX)** (Department of Veterans Affairs)
-* **Defense Casualty Analysis System (DCAS)** (Department of Defense)
-* **Single Family Section 502 Direct Active Loans** (U.S. Department of Agriculture)
-* **FAFSA Completion by High School & Public School District** (Department of Education)
-* **National Vital Statistics System (NVSS) Birth Data** (Centers for Disease Control and Prevention / HHS)
-
-### Geospatial Data (`CAT-GEO`)
-* **North American Bat Monitoring (NABat) Database** (U.S. Geological Survey)
-* **Cropland Data Layer** (National Agricultural Statistics Service / USDA)
-* **Next Generation Weather Radar (NEXRAD)** (National Oceanic and Atmospheric Administration)
-* **National Bridge Inventory (NBI)** (Department of Transportation)
-* **Power Plants in the U.S.** (Energy Information Administration / DOE)
-* **Military Training Routes (MTRs)** (Federal Aviation Administration)
-* **National Water Dashboard** (U.S. Geological Survey)
-* **Air Quality System (AQS)** (Environmental Protection Agency)
-* **Landsat** (NASA / USGS)
-* **Public Housing Developments** (Department of Housing and Urban Development)
-* **Geospatial Health Systems** (Department of Health and Human Services)
-
-### Scientific Data (`CAT-SCI`)
-* **Framingham Heart Study (FHS)** (National Institutes of Health / HHS)
-* **Atmospheric Radiation Monitoring Dataset (ARM)** (Department of Energy / Oak Ridge National Laboratory)
-* **Dolphin Sound Production** (NOAA / U.S. Navy)
-* **database of Genotypes and Phenotypes (dbGaP)** (National Institutes of Health)
-* **All of Us** (National Institutes of Health)
-* **ScienceHub** (Environmental Protection Agency)
-* **Dr. Duke's Phytochemical & Ethnobotanical Databases** (U.S. Department of Agriculture)
-* **National Ecological Observatory Network (NEON)** (National Science Foundation)
-* **Local Climatological Data** (NOAA / NCEI)
-* **Biological Data Repository** (National Aeronautics and Space Administration)
-* **National Invasive Species Information Center Species Profiles** (U.S. Department of Agriculture)
-
-### Accountability Data (`CAT-ACCT`)
-* **SNAP Application Processing Timeliness** (Food and Nutrition Service / USDA)
-* **Approved Apportionments Data** (Office of Management and Budget)
-* **Freedom of Information Act (FOIA) Requests** (Department of Justice)
-* **Information Collection Review Data** (Office of Management and Budget)
-* **USASpending** (Department of the Treasury)
-* **Historical National Median Processing Time** (USCIS / DHS)
-* **National 800 Number Network Average Speed to Answer** (Social Security Administration)
-* **State Medicaid and CHIP Applications, Eligibility Determinations, and Enrollment Data** (Centers for Medicare & Medicaid Services / HHS)
-* **Federal Government Energy and Water Use** (Department of Energy)
-* **Assault and Use of Force** (Customs and Border Protection / DHS)
-
-### Evaluation Data (`CAT-EVAL`)
-* **Weatherization Assistance Program (WAP) Retrospective Evaluation** (Department of Energy / ORNL)
-* **WIC Tribal Organizations & U.S. Territories Study** (U.S. Department of Agriculture)
-* **Telehealth Resource Center Performance Measurement** (Health Resources and Services Administration / HHS)
-* **RETAIN (Retaining Employment & Talent After Injury/Illness Network) Evaluation** (Department of Labor / SSA)
-* **Pathways to Partnerships Program Evaluation** (Department of Education)
-* **Innovation Corps (I-Corps) Program Dataset** (National Science Foundation)
-* **Malaria Behavioral Survey (MBS) Data** (U.S. Agency for International Development)
-* **Evidence & Evaluation Clearinghouses**: Pathways to Work Evidence Clearinghouse, HomVEE, Title IV-E Prevention Services Clearinghouse, CrimeSolutions (NIJ), NREPP (SAMHSA), What Works Clearinghouse (IES).
-
-### Navigation Data (`CAT-NAV`)
-* **Health Care Access & Quality Information** (Department of Veterans Affairs)
-* **PubMed** (National Institutes of Health)
-* **Permitting Innovation Center Categorical Exclusions** (Council on Environmental Quality)
-* **PatentsView** (U.S. Patent and Trademark Office)
-* **Data.gov** (General Services Administration)
-* **SNAP Retailer Locator** (U.S. Department of Agriculture)
-* **Medicare Provider Data Catalog** (Centers for Medicare & Medicaid Services)
-* **FAS AAS Opportunities Dashboard** (General Services Administration)
-* **ClinicalTrials.gov** (National Institutes of Health)
-* **Grants.gov** (Department of Health and Human Services)
-* **Harmonized Tariff Schedule** (U.S. International Trade Commission)
-
-### Reference Data (`CAT-REF`)
-* **National Spatial Reference System (NSRS)** (NOAA / National Geodetic Survey)
-* **Administrative Boundaries of National Park System Units** (National Park Service / DOI)
-* **U.S. Maritime Limits & Boundaries** (National Oceanic and Atmospheric Administration)
-* **Metropolitan & Micropolitan Statistical Area Delineations** (Office of Management and Budget)
-* **North American Industry Classification System (NAICS)** (Office of Management and Budget)
-* **Census Designated Places** (U.S. Census Bureau)
-* **TIGER/Line Shapefiles** (U.S. Census Bureau)
-* **Orange Book (Approved Drug Products with Therapeutic Equivalence Evaluations)** (Food and Drug Administration)
-* **National Vulnerability Database** (National Institute of Standards and Technology)
-* **Federal School Code Lists** (Department of Education)
-
----
-
-## VI. Standardized Output Templates
-
-### 1. Single Dataset Lookup Format
-
-**Dataset Name**: [Official Dataset Title]  
-**Managing Agency**: [Department / Bureau / Office]  
-**Primary Category**: `[CAT-ID]` ([Category Name])  
-**Secondary Category**: `[CAT-ID]` ([Category Name] or *None*)  
-
-| Attribute | Metadata Detail |
-| :--- | :--- |
-| **Collection Mode** | [Surveys / Administrative Forms / Sensors / Mixed Methods / etc.] |
-| **Governing Policy/Laws** | [CIPSEA / Privacy Act / OGDA / GDA / Evidence Act / etc.] |
-| **Access & Portals** | [Open Access / Restricted Access / API / Data.gov / GeoPlatform] |
-| **Data Use Case** | [Summary of practical/policy use case from guide] |
-
-### 2. Multi-Dataset Comparison / Query Format
-
-| Dataset Name | Agency | Primary Category | Collection Mode | Legal & Policy Framework |
-| :--- | :--- | :--- | :--- | :--- |
-| [Dataset 1] | [Agency 1] | `[CAT-ID]` | [Mode 1] | [Policy/Law 1] |
-| [Dataset 2] | [Agency 2] | `[CAT-ID]` | [Mode 2] | [Policy/Law 2] |
+| Dataset Name | Agency | Primary Category | Collection Mode | Verification Source | Legal & Policy Framework |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Dataset 1] | [Agency 1] | `[CAT-ID]` | [Mode 1] | [Field Guide / Data.gov / Agency Site] | [Policy/Law 1] |
+| [Dataset 2] | [Agency 2] | `[CAT-ID]` | [Mode 2] | [Field Guide / Data.gov / Agency Site] | [Policy/Law 2] |
