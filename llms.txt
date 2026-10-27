@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /AGENTS.md
+
+# Direct AI agents and LLMs to instruction file
+Agent-Instructions: https://federaldatafieldguide.us/AGENTS.md
